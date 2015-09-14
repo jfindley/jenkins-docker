@@ -12,8 +12,8 @@ RUN apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get clean
 
-ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/bin/docker
-RUN chmod +x /usr/bin/docker
+ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/local/bin/docker
+RUN chmod +x /usr/local/bin/docker
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
