@@ -56,10 +56,11 @@ EXPOSE 50000
 
 ENV COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log
 
-USER jenkins
 
 ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /var/jenkins_home/bin/docker
 RUN chmod +x /var/jenkins_home/bin/docker
+
+USER jenkins
 
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
